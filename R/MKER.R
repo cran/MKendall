@@ -1,0 +1,10 @@
+MKER=function(X,kmax){
+  VKR=eigen(MSK(X,1))$values
+  k=which.max(VKR[1:kmax]/(VKR[2:(kmax+1)]))
+  VKC=eigen(MSK(X,2))$values
+  r=which.max(VKC[1:kmax]/(VKC[2:(kmax+1)]))
+  fn=list()
+  fn$khat=k
+  fn$rhat=r
+  return(fn)
+}
